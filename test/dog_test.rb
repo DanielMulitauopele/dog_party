@@ -3,16 +3,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/dog'
 
-class DogTest < Minitest::Test
-
-  def test_it_exists
-    dog = Dog.new("Fido", 2, "Dalmation")
-
-    assert_instance_of Dog, dog
-  end
-end
-
-# existing require statements
 
 class DogTest < Minitest::Test
   # existing test that Dog exists
@@ -40,6 +30,14 @@ class DogTest < Minitest::Test
 
     expected = "Dalmation"
     actual   = dog.breed
+
+    assert_equal expected, actual
+  end
+
+  def test_does_it_bark
+    dog = Dog.new("Spot", 2, "Collie")
+    expected = "Woof!"
+    actual = dog.bark
 
     assert_equal expected, actual
   end
