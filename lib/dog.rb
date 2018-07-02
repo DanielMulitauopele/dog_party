@@ -8,4 +8,12 @@ class Dog
     @age   = age
     @breed = breed
   end
+
+  def bark
+    "Woof!"
+  end
 end
+
+dog = Dog.new("Spot", 2, "Collie")
+
+p dog.bark
